@@ -1,0 +1,155 @@
+{
+	"groups": [
+		{
+			"name": "preload",
+			"keys": "bg_day_png,land_png,button_share_png,text_ready_png,tutorial_png,title_png,bird0_0_png,bird0_1_png,bird0_2_png,bird_json,bird_png,bg_night_png,pipe_down_png,pipe_up_png,pipe2_down_png,pipe2_up_png,text_game_over_png,button_play_png,score_panel_png,font_0_png,font_1_png,font_2_png,font_3_png,font_4_png,font_5_png,font_6_png,font_7_png,font_8_png,font_9_png"
+		}
+	],
+	"resources": [
+		{
+			"name": "bg_day_png",
+			"type": "image",
+			"url": "assets/bg_day.png"
+		},
+		{
+			"name": "land_png",
+			"type": "image",
+			"url": "assets/land.png"
+		},
+		{
+			"name": "button_share_png",
+			"type": "image",
+			"url": "assets/button_share.png"
+		},
+		{
+			"name": "text_ready_png",
+			"type": "image",
+			"url": "assets/text_ready.png"
+		},
+		{
+			"name": "tutorial_png",
+			"type": "image",
+			"url": "assets/tutorial.png"
+		},
+		{
+			"name": "title_png",
+			"type": "image",
+			"url": "assets/title.png"
+		},
+		{
+			"name": "bird0_0_png",
+			"type": "image",
+			"url": "assets/bird0_0.png"
+		},
+		{
+			"name": "bird0_1_png",
+			"type": "image",
+			"url": "assets/bird0_1.png"
+		},
+		{
+			"name": "bird0_2_png",
+			"type": "image",
+			"url": "assets/bird0_2.png"
+		},
+		{
+			"name": "bird_json",
+			"type": "json",
+			"url": "assets/bird.json"
+		},
+		{
+			"name": "bird_png",
+			"type": "image",
+			"url": "assets/bird.png"
+		},
+		{
+			"name": "bg_night_png",
+			"type": "image",
+			"url": "assets/bg_night.png"
+		},
+		{
+			"name": "pipe_down_png",
+			"type": "image",
+			"url": "assets/pipe_down.png"
+		},
+		{
+			"name": "pipe_up_png",
+			"type": "image",
+			"url": "assets/pipe_up.png"
+		},
+		{
+			"name": "pipe2_down_png",
+			"type": "image",
+			"url": "assets/pipe2_down.png"
+		},
+		{
+			"name": "pipe2_up_png",
+			"type": "image",
+			"url": "assets/pipe2_up.png"
+		},
+		{
+			"name": "text_game_over_png",
+			"type": "image",
+			"url": "assets/text_game_over.png"
+		},
+		{
+			"name": "button_play_png",
+			"type": "image",
+			"url": "assets/button_play.png"
+		},
+		{
+			"name": "score_panel_png",
+			"type": "image",
+			"url": "assets/score_panel.png"
+		},
+		{
+			"name": "font_0_png",
+			"type": "image",
+			"url": "assets/font_0.png"
+		},
+		{
+			"name": "font_1_png",
+			"type": "image",
+			"url": "assets/font_1.png"
+		},
+		{
+			"name": "font_2_png",
+			"type": "image",
+			"url": "assets/font_2.png"
+		},
+		{
+			"name": "font_3_png",
+			"type": "image",
+			"url": "assets/font_3.png"
+		},
+		{
+			"name": "font_4_png",
+			"type": "image",
+			"url": "assets/font_4.png"
+		},
+		{
+			"name": "font_5_png",
+			"type": "image",
+			"url": "assets/font_5.png"
+		},
+		{
+			"name": "font_6_png",
+			"type": "image",
+			"url": "assets/font_6.png"
+		},
+		{
+			"name": "font_7_png",
+			"type": "image",
+			"url": "assets/font_7.png"
+		},
+		{
+			"name": "font_8_png",
+			"type": "image",
+			"url": "assets/font_8.png"
+		},
+		{
+			"name": "font_9_png",
+			"type": "image",
+			"url": "assets/font_9.png"
+		}
+	]
+}

@@ -1,0 +1,94 @@
+{"mc":{
+	"one":{
+		"frameRate":8,
+		"labels":[
+			{"name":"fly","frame":1,"end":3}
+			
+			],
+		"events":[
+			
+			],
+		"frames":[
+			
+			{
+			"res":"bird0_0_png",
+			"x":6,
+			"y":13
+			},
+			{
+			"res":"bird0_1_png",
+			"x":6,
+			"y":13
+			},
+			{
+			"res":"bird0_2_png",
+			"x":6,
+			"y":13
+			}
+			]
+},"two":{
+		"frameRate":8,
+		"labels":[
+			{"name":"fly","frame":1,"end":3}
+			
+			],
+		"events":[
+			
+			],
+		"frames":[
+			
+			{
+			"res":"bird1_0_png",
+			"x":6,
+			"y":13
+			},
+			{
+			"res":"bird1_1_png",
+			"x":6,
+			"y":12
+			},
+			{
+			"res":"bird1_2_png",
+			"x":6,
+			"y":13
+			}
+			]
+},"three":{
+		"frameRate":8,
+		"labels":[
+			{"name":"fly","frame":1,"end":3}
+			
+			],
+		"events":[
+			
+			],
+		"frames":[
+			
+			{
+			"res":"bird2_0_png",
+			"x":6,
+			"y":12
+			},
+			{
+			"res":"bird2_1_png",
+			"x":6,
+			"y":13
+			},
+			{
+			"res":"bird2_2_png",
+			"x":6,
+			"y":12
+			}
+			]
+}},
+	"res":{
+		"bird0_1_png":{"x":36,"y":26,"w":34,"h":24},
+		"bird0_2_png":{"x":0,"y":0,"w":34,"h":24},
+		"bird2_0_png":{"x":0,"y":26,"w":34,"h":24},
+		"bird2_2_png":{"x":72,"y":52,"w":34,"h":24},
+		"bird2_1_png":{"x":36,"y":52,"w":34,"h":24},
+		"bird1_2_png":{"x":36,"y":0,"w":34,"h":24},
+		"bird0_0_png":{"x":72,"y":0,"w":34,"h":24},
+		"bird1_1_png":{"x":72,"y":26,"w":34,"h":24},
+		"bird1_0_png":{"x":0,"y":52,"w":34,"h":24}
+	}}
