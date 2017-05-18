@@ -102,7 +102,7 @@ function ColumnList() {
     let len = this.columnList.length;
     if (len == 0 || this.columnList[len - 1].x < stageW - 200) {
       this.push();
-      this.number = (this.number + 1) % 10;
+      this.number = (this.number + 1) % 100;
     }
   };
 
@@ -150,7 +150,7 @@ pub.connection = (wss) => {
       columns.checkShift();
       // 添加新栏杆（每次最多添加一个）
       columns.checkPush();
-      console.log(`oldColumn,${oldColumns.print()},column,${columns.print()}`);
+      // console.log(`oldColumn,${oldColumns.print()},column,${columns.print()}`);
       // 广播用户
       broadcast(wss, ws,
         // 广播这一时刻的状态和一个未来状态
@@ -168,7 +168,7 @@ pub.connection = (wss) => {
             broadcast(wss, ws,
               // start 别人进入游戏 这名玩家的信息
               `start,1,${num}:${high.get(num)}`,
-              // start 自己进入游戏 其他玩家的信息 自己的session编号 柱子的高度信息
+              // start 自己进入游戏 其他玩家的信息
               `start,0,${mapToString(high)}}`
             );
             break;
