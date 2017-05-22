@@ -4,7 +4,7 @@
 
 let pub = {};
 let WebSocket = require('ws');
-let high = new Map();
+let position = new Map();
 let oldColumns = new ColumnList();
 let columns = new ColumnList();
 
@@ -22,6 +22,19 @@ let broadcast = (wss, ws, otherData, myData) => {
         ? client.send(otherData)
         : client.send(myData)
     }
+  });
+};
+
+/**
+ * 单播给自己
+ * @param wss
+ * @param ws
+ * @param data
+ */
+let sendToMe = (wss, ws, data) => {
+  wss.clients.forEach(function each(client) {
+    if (client.readyState === WebSocket.OPEN)
+      if (client === ws) client.send(data)
   });
 };
 
@@ -45,7 +58,7 @@ let getWsNumber = (wss, ws, cb) => {
 let mapToString = (map) => {
   let str = '';
   for (let item of map.entries()) {
-    str += `${item[0]}:${item[1]}/`;
+    str += `${item[0]}:${item[1].x}|${item[1].y}/`;
   }
   return str;
 };
@@ -132,6 +145,18 @@ function ColumnList() {
   this.checkPush();
 }
 
+// 每120毫秒更新一下管子状态并广播所有用户
+setInterval(() => {
+  // 保留这一时刻
+  columns.copy(oldColumns);
+  // 修改栏杆的x
+  columns.change();
+  // 删除屏幕外的栏杆（每次最多删除一个）
+  columns.checkShift();
+  // 添加新栏杆（每次最多添加一个）
+  columns.checkPush();
+  // console.log(`oldColumn,${oldColumns.print()},column,${columns.print()}`);
+}, 120);
 
 /**
  * Websocket事件
@@ -140,23 +165,9 @@ function ColumnList() {
 pub.connection = (wss) => {
   wss.on('connection', (ws) => {
 
-    // 每120毫秒更新一下管子状态并广播所有用户
+    // 单播用户
     setInterval(() => {
-      // 保留这一时刻
-      columns.copy(oldColumns);
-      // 修改栏杆的x
-      columns.change();
-      // 删除屏幕外的栏杆（每次最多删除一个）
-      columns.checkShift();
-      // 添加新栏杆（每次最多添加一个）
-      columns.checkPush();
-      // console.log(`oldColumn,${oldColumns.print()},column,${columns.print()}`);
-      // 广播用户
-      broadcast(wss, ws,
-        // 广播这一时刻的状态和一个未来状态
-        `oldColumn,${oldColumns.print()},column,${columns.print()}`,
-        `oldColumn,${oldColumns.print()},column,${columns.print()}`
-      );
+      sendToMe(wss, ws, `oldColumn,${oldColumns.print()},column,${columns.print()}`)
     }, 120);
 
     ws.on('message',(message) => {
@@ -164,12 +175,12 @@ pub.connection = (wss) => {
         let list = message.split(',');
         switch (list[0]) {
           case 'start':
-            high.set(num, parseInt(list[1]));
+            position.set(num, {x: parseFloat(list[1]), y: parseFloat(list[2])});
             broadcast(wss, ws,
               // start 别人进入游戏 这名玩家的信息
-              `start,1,${num}:${high.get(num)}`,
+              `start,1,${num}:${position.get(num).x}|${position.get(num).y}`,
               // start 自己进入游戏 其他玩家的信息
-              `start,0,${mapToString(high)}}`
+              `start,0,${mapToString(position)}`
             );
             break;
           case 'jump':
@@ -177,18 +188,20 @@ pub.connection = (wss) => {
             broadcast(wss, ws, `jump,${num}`, `jump,${num}`);
             break;
           case 'dead':
-            high.delete(num);
+            position.delete(num);
             // 当有玩家死亡的时候，广播所有玩家
-            broadcast(wss, ws, `dead,${num}`, `dead,${num}`);
+            broadcast(wss, ws, `dead,${num}`, `dead,`);
             break;
+          case 'high':
+            let x = position.get(parseInt(list[1]));
+            position.set(parseInt(list[1]), {x: x, y:parseFloat(list[2])});
         }
       })
     });
 
     ws.on('close', () => {
       getWsNumber(wss, ws, (num) => {
-        // 查看是否需要修改master
-        high.delete(num);
+        position.delete(num);
         // 当有玩家退出游戏时，广播其他玩家它退出
         broadcast(wss, ws, 'close,' + num, null);
       })
