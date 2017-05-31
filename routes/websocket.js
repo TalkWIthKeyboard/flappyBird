@@ -155,7 +155,6 @@ setInterval(() => {
   columns.checkShift();
   // 添加新栏杆（每次最多添加一个）
   columns.checkPush();
-  // console.log(`oldColumn,${oldColumns.print()},column,${columns.print()}`);
 }, 120);
 
 /**
@@ -167,10 +166,14 @@ pub.connection = (wss) => {
 
     // 单播用户
     setInterval(() => {
-      sendToMe(wss, ws, `oldColumn,${oldColumns.print()},column,${columns.print()}`)
+      // 水管的上一时刻坐标 和 水管的当前时刻坐标
+      sendToMe(wss, ws, `oldColumn,${oldColumns.print()},column,${columns.print()}`);
+      // 所有小鸟的坐标
+      sendToMe(wss, ws, `position,${mapToString(position)}`);
     }, 120);
 
     ws.on('message',(message) => {
+      // console.log(message);
       getWsNumber(wss, ws, (num) => {
         let list = message.split(',');
         switch (list[0]) {
@@ -193,8 +196,11 @@ pub.connection = (wss) => {
             broadcast(wss, ws, `dead,${num}`, `dead,`);
             break;
           case 'high':
-            let x = position.get(parseInt(list[1]));
-            position.set(parseInt(list[1]), {x: x, y:parseFloat(list[2])});
+            // 同步客户端的小鸟高度
+            if (position.has(parseInt(list[1]))) {
+              let x = position.get(parseInt(list[1])).x;
+              position.set(parseInt(list[1]), {x: x, y:parseFloat(list[2])});
+            }
         }
       })
     });
