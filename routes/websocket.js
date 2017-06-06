@@ -58,7 +58,7 @@ let getWsNumber = (wss, ws, cb) => {
 let mapToString = (map) => {
   let str = '';
   for (let item of map.entries()) {
-    str += `${item[0]}:${item[1].x}|${item[1].y}/`;
+    str += `${item[0]}:${item[1].x}|${item[1].y}|${item[1].name}/`;
   }
   return str;
 };
@@ -173,15 +173,14 @@ pub.connection = (wss) => {
     }, 120);
 
     ws.on('message',(message) => {
-      // console.log(message);
       getWsNumber(wss, ws, (num) => {
         let list = message.split(',');
         switch (list[0]) {
           case 'start':
-            position.set(num, {x: parseFloat(list[1]), y: parseFloat(list[2])});
+            position.set(num, {x: parseFloat(list[1]), y: parseFloat(list[2]), name: list[3]});
             broadcast(wss, ws,
               // start 别人进入游戏 这名玩家的信息
-              `start,1,${num}:${position.get(num).x}|${position.get(num).y}`,
+              `start,1,${num}:${position.get(num).x}|${position.get(num).y}|${position.get(num).name}`,
               // start 自己进入游戏 其他玩家的信息
               `start,0,${mapToString(position)}`
             );
