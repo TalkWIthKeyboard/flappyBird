@@ -1,155 +1,160 @@
 {
 	"groups": [
 		{
-			"name": "preload",
-			"keys": "bg_day_png,land_png,button_share_png,text_ready_png,tutorial_png,title_png,bird0_0_png,bird0_1_png,bird0_2_png,bird_json,bird_png,bg_night_png,pipe_down_png,pipe_up_png,pipe2_down_png,pipe2_up_png,text_game_over_png,button_play_png,score_panel_png,font_0_png,font_1_png,font_2_png,font_3_png,font_4_png,font_5_png,font_6_png,font_7_png,font_8_png,font_9_png"
+			"keys": "bg_day_png,land_png,button_share_png,text_ready_png,tutorial_png,title_png,bird0_0_png,bird0_1_png,bird0_2_png,bird_json,bird_png,bg_night_png,pipe_down_png,pipe_up_png,pipe2_down_png,pipe2_up_png,text_game_over_png,button_play_png,score_panel_png,font_0_png,font_1_png,font_2_png,font_3_png,font_4_png,font_5_png,font_6_png,font_7_png,font_8_png,font_9_png,arrow_png",
+			"name": "preload"
 		}
 	],
 	"resources": [
 		{
-			"name": "bg_day_png",
+			"url": "assets/arrow.png",
 			"type": "image",
-			"url": "assets/bg_day.png"
+			"name": "arrow_png"
 		},
 		{
-			"name": "land_png",
+			"url": "assets/bg_day.png",
 			"type": "image",
-			"url": "assets/land.png"
+			"name": "bg_day_png"
 		},
 		{
-			"name": "button_share_png",
+			"url": "assets/land.png",
 			"type": "image",
-			"url": "assets/button_share.png"
+			"name": "land_png"
 		},
 		{
-			"name": "text_ready_png",
+			"url": "assets/button_share.png",
 			"type": "image",
-			"url": "assets/text_ready.png"
+			"name": "button_share_png"
 		},
 		{
-			"name": "tutorial_png",
+			"url": "assets/text_ready.png",
 			"type": "image",
-			"url": "assets/tutorial.png"
+			"name": "text_ready_png"
 		},
 		{
-			"name": "title_png",
+			"url": "assets/tutorial.png",
 			"type": "image",
-			"url": "assets/title.png"
+			"name": "tutorial_png"
 		},
 		{
-			"name": "bird0_0_png",
+			"url": "assets/title.png",
 			"type": "image",
-			"url": "assets/bird0_0.png"
+			"name": "title_png"
 		},
 		{
-			"name": "bird0_1_png",
+			"url": "assets/bird0_0.png",
 			"type": "image",
-			"url": "assets/bird0_1.png"
+			"name": "bird0_0_png"
 		},
 		{
-			"name": "bird0_2_png",
+			"url": "assets/bird0_1.png",
 			"type": "image",
-			"url": "assets/bird0_2.png"
+			"name": "bird0_1_png"
 		},
 		{
-			"name": "bird_json",
+			"url": "assets/bird0_2.png",
+			"type": "image",
+			"name": "bird0_2_png"
+		},
+		{
+			"url": "assets/bird.json",
 			"type": "json",
-			"url": "assets/bird.json"
+			"name": "bird_json"
 		},
 		{
-			"name": "bird_png",
+			"url": "assets/bird.png",
 			"type": "image",
-			"url": "assets/bird.png"
+			"name": "bird_png"
 		},
 		{
-			"name": "bg_night_png",
+			"url": "assets/bg_night.png",
 			"type": "image",
-			"url": "assets/bg_night.png"
+			"name": "bg_night_png"
 		},
 		{
-			"name": "pipe_down_png",
+			"url": "assets/pipe_down.png",
 			"type": "image",
-			"url": "assets/pipe_down.png"
+			"name": "pipe_down_png"
 		},
 		{
-			"name": "pipe_up_png",
+			"url": "assets/pipe_up.png",
 			"type": "image",
-			"url": "assets/pipe_up.png"
+			"name": "pipe_up_png"
 		},
 		{
-			"name": "pipe2_down_png",
+			"url": "assets/pipe2_down.png",
 			"type": "image",
-			"url": "assets/pipe2_down.png"
+			"name": "pipe2_down_png"
 		},
 		{
-			"name": "pipe2_up_png",
+			"url": "assets/pipe2_up.png",
 			"type": "image",
-			"url": "assets/pipe2_up.png"
+			"name": "pipe2_up_png"
 		},
 		{
-			"name": "text_game_over_png",
+			"url": "assets/text_game_over.png",
 			"type": "image",
-			"url": "assets/text_game_over.png"
+			"name": "text_game_over_png"
 		},
 		{
-			"name": "button_play_png",
+			"url": "assets/button_play.png",
 			"type": "image",
-			"url": "assets/button_play.png"
+			"name": "button_play_png"
 		},
 		{
-			"name": "score_panel_png",
+			"url": "assets/score_panel.png",
 			"type": "image",
-			"url": "assets/score_panel.png"
+			"name": "score_panel_png"
 		},
 		{
-			"name": "font_0_png",
+			"url": "assets/font_0.png",
 			"type": "image",
-			"url": "assets/font_0.png"
+			"name": "font_0_png"
 		},
 		{
-			"name": "font_1_png",
+			"url": "assets/font_1.png",
 			"type": "image",
-			"url": "assets/font_1.png"
+			"name": "font_1_png"
 		},
 		{
-			"name": "font_2_png",
+			"url": "assets/font_2.png",
 			"type": "image",
-			"url": "assets/font_2.png"
+			"name": "font_2_png"
 		},
 		{
-			"name": "font_3_png",
+			"url": "assets/font_3.png",
 			"type": "image",
-			"url": "assets/font_3.png"
+			"name": "font_3_png"
 		},
 		{
-			"name": "font_4_png",
+			"url": "assets/font_4.png",
 			"type": "image",
-			"url": "assets/font_4.png"
+			"name": "font_4_png"
 		},
 		{
-			"name": "font_5_png",
+			"url": "assets/font_5.png",
 			"type": "image",
-			"url": "assets/font_5.png"
+			"name": "font_5_png"
 		},
 		{
-			"name": "font_6_png",
+			"url": "assets/font_6.png",
 			"type": "image",
-			"url": "assets/font_6.png"
+			"name": "font_6_png"
 		},
 		{
-			"name": "font_7_png",
+			"url": "assets/font_7.png",
 			"type": "image",
-			"url": "assets/font_7.png"
+			"name": "font_7_png"
 		},
 		{
-			"name": "font_8_png",
+			"url": "assets/font_8.png",
 			"type": "image",
-			"url": "assets/font_8.png"
+			"name": "font_8_png"
 		},
 		{
-			"name": "font_9_png",
+			"url": "assets/font_9.png",
 			"type": "image",
-			"url": "assets/font_9.png"
+			"name": "font_9_png"
 		}
 	]
 }
