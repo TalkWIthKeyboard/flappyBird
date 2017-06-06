@@ -197,8 +197,8 @@ pub.connection = (wss) => {
           case 'high':
             // 同步客户端的小鸟高度
             if (position.has(parseInt(list[1]))) {
-              let x = position.get(parseInt(list[1])).x;
-              position.set(parseInt(list[1]), {x: x, y:parseFloat(list[2])});
+              let obj = position.get(parseInt(list[1]));
+              position.set(parseInt(list[1]), {x: obj.x, y:parseFloat(list[2]), name: obj.name});
             }
         }
       })
