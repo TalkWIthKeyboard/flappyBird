@@ -34,7 +34,7 @@ $ git clone https://github.com/TalkWIthKeyboard/flappyBird.git
 + 将在 ```FlappyBird-Egret/bin-release/web``` 中的发布文件对 ```flappyBird/public``` 进行覆盖
 
 
-+ 启动项目**（默认5500端口，可以修改）**
++ 启动项目 **（默认5500端口，可以修改）**
 
 ```
 $ cd flappyBird
