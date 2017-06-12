@@ -2,8 +2,11 @@
  * Created by CoderSong on 17/5/13.
  */
 
-let pub = {};
-let WebSocket = require('ws');
+const pub = {};
+const WebSocket = require('ws');
+const Score = require('./../model/score');
+const _ = require('underscore');
+const moment = require('moment');
 let position = new Map();
 let oldColumns = new ColumnList();
 let columns = new ColumnList();
@@ -61,6 +64,51 @@ let mapToString = (map) => {
     str += `${item[0]}:${item[1].x}|${item[1].y}|${item[1].name}/`;
   }
   return str;
+};
+
+/**
+ *
+ * @param len
+ */
+let nSpace = (len) => {
+  let str = '';
+  for (let i = 0; i < len; i++) str += ' ';
+  return str;
+};
+
+/**
+ * list转字符串
+ * @param list
+ * @returns {string}
+ * @constructor
+ */
+let listToString = (list) => {
+  let str = '';
+  for (let i = 0; i < list.length; i++)
+    str +=  `${i}.    ${list[i].name}\r`;
+  str += ',';
+  for (let i = 0; i < list.length; i++)
+    str += `${list[i].score}\r`;
+  return str;
+};
+
+
+let savePromise = (score) => {
+  return new Promise((resolve, reject) => {
+    score.save((err,data) => {
+      if (err) reject(err);
+      else resolve(data);
+    })
+  })
+};
+
+let findPromise = () => {
+  return new Promise((resolve, reject) => {
+    Score.findTopTen((err, data) => {
+      if (err) reject(err);
+      else resolve(data);
+    })
+  })
 };
 
 
@@ -192,7 +240,21 @@ pub.connection = (wss) => {
           case 'dead':
             position.delete(num);
             // 当有玩家死亡的时候，广播所有玩家
-            broadcast(wss, ws, `dead,${num}`, `dead,`);
+            let score = new Score({username: list[2], score: parseInt(list[3])});
+            savePromise(score)
+              .then(findPromise)
+              .then(data => {
+                let list = [];
+                _.each(data, (each) => {
+                  let obj = {};
+                  obj.name = each.username;
+                  obj.score = each.score;
+                  obj.date = new moment(each.meta.createAt).format("YYYY-MM-DD HH:mm:ss");
+                  list.push(obj);
+                });
+                broadcast(wss, ws, `dead,${num}`, `dead,,${listToString(list)}`);
+              })
+              .catch(err => {console.log(err)});
             break;
           case 'high':
             // 同步客户端的小鸟高度
