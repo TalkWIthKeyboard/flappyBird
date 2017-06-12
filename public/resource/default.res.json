@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "bg_day_png,land_png,button_share_png,text_ready_png,tutorial_png,title_png,bird0_0_png,bird0_1_png,bird0_2_png,bird_json,bird_png,bg_night_png,pipe_down_png,pipe_up_png,pipe2_down_png,pipe2_up_png,text_game_over_png,button_play_png,score_panel_png,font_0_png,font_1_png,font_2_png,font_3_png,font_4_png,font_5_png,font_6_png,font_7_png,font_8_png,font_9_png,arrow_png",
+			"keys": "bg_day_png,land_png,button_share_png,text_ready_png,tutorial_png,title_png,bird0_0_png,bird0_1_png,bird0_2_png,bird_json,bird_png,bg_night_png,pipe_down_png,pipe_up_png,pipe2_down_png,pipe2_up_png,text_game_over_png,button_play_png,score_panel_png,font_0_png,font_1_png,font_2_png,font_3_png,font_4_png,font_5_png,font_6_png,font_7_png,font_8_png,font_9_png,arrow_png,score_panel_2_png",
 			"name": "preload"
 		}
 	],
@@ -155,6 +155,11 @@
 			"url": "assets/font_9.png",
 			"type": "image",
 			"name": "font_9_png"
+		},
+		{
+			"name": "score_panel_2_png",
+			"type": "image",
+			"url": "assets/score_panel_2.png"
 		}
 	]
 }
