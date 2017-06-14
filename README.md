@@ -4,7 +4,7 @@
 > This is a online game **flappy bird**.
 > Version: 1.1.0
 
-![flappybird-img](http://oj7mt8loy.bkt.clouddn.com/2017-06-14%2014.29.56.gif)
+<img src="http://oj7mt8loy.bkt.clouddn.com/2017-06-14%2014.29.56.gif" width = "300" height = "550">
 
 ## Update
 日期 | 版本 | 功能
