@@ -1,10 +1,16 @@
 # FlappyBirdOnline
-![node-icon](https://img.shields.io/badge/node-6.2.2-blue.svg) ![egret](https://img.shields.io/badge/egret-4.0.3-blue.svg) ![express-icon](https://img.shields.io/badge/express-4.15.2-yellow.svg) ![build-icon](https://img.shields.io/badge/build-passing-brightgreen.svg) 
+![node-icon](https://img.shields.io/badge/node-6.2.2-blue.svg) ![egret](https://img.shields.io/badge/egret-4.0.3-blue.svg) ![express-icon](https://img.shields.io/badge/express-4.15.2-yellow.svg) ![mongoose-icon](https://img.shields.io/badge/mongoose-4.9.6-yellow.svg) ![build-icon](https://img.shields.io/badge/build-passing-brightgreen.svg) 
 
 > This is a online game **flappy bird**.
-> Version: 1.0.0
+> Version: 1.1.0
 
-![flappybird-img](http://oj7mt8loy.bkt.clouddn.com/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202017-06-07%20%E4%B8%8A%E5%8D%8811.16.56.png)
+![flappybird-img](http://oj7mt8loy.bkt.clouddn.com/2017-06-14%2014.29.56.gif)
+
+## Update
+日期 | 版本 | 功能
+----|------|----
+2016-6-12 | v1.1.0 | 添加排行榜功能
+2016-6-6 | v1.0.0 | 完成网络基础功能
 
 ## Explain
 这是一个 ```H5``` 游戏，前端使用 ```Egret``` 引擎开发，打包后通过 ```Express``` 进行发布。所以该库只是**发布库**，**游戏开发库**见下。游戏开发库的编写推荐```Egret``` 官方的IDE：**EgretWing3**。
@@ -34,12 +40,14 @@ $ git clone https://github.com/TalkWIthKeyboard/flappyBird.git
 + 将在 ```FlappyBird-Egret/bin-release/web``` 中的发布文件对 ```flappyBird/public``` 进行覆盖
 
 
-+ 启动项目 **（默认5500端口，可以修改）**
++ 启动项目**（默认5500端口，可以修改）**
 
 ```
 $ cd flappyBird
 $ node app.js
 ```
+
+**最新版本添加了与数据库的交互，所以需要手动到 ```app.js``` 里配置数据库的端口**
 
 ## Game-design
 
@@ -82,3 +90,5 @@ $ node app.js
     + 服务端统一向客户端广播现在存活的客户端位置
     + 客户端插值向障碍物新状态转移
     + 客户端会自动释放已经淘汰的障碍物
+
+
